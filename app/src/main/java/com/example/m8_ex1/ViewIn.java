@@ -34,7 +34,7 @@ public class ViewIn extends Fragment {
         ((MainActivity)getActivity()).list.clear();
 
         while (res.moveToNext()){
-            ((MainActivity)getActivity()).list.add( new Incidencia(res.getString(0), res.getString(1)));
+            ((MainActivity)getActivity()).list.add( new Listar(res.getString(0), res.getString(1), res.getString(2)));
             }
 
         RecyclerView recyclerView = (RecyclerView)listIncidencia.findViewById(R.id.RecyclerId);

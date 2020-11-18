@@ -5,7 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
-import com.example.m8_ex1.DB.IncidenciaContract;
+import com.example.m8_ex1.DB.IncidenciaContract.*;
+import com.example.m8_ex1.*;
 import com.example.m8_ex1.DB.IncidenciaDBHelper;
 
 import java.util.ArrayList;
@@ -18,14 +19,14 @@ public class MainActivity extends AppCompatActivity{
 
     //protected ArrayList<String> listaIn;
     //protected ArrayList<String> listaSpinner;
-    protected ArrayList<Incidencia> list;
+    protected ArrayList<Listar> list;
     protected ArrayList<Incidencia> listcomprobante;
     protected int comprobante = 0;
     protected IncidenciaDBHelper dbHelper;
     protected SQLiteDatabase db;
 
     protected static final String SQL_CREATE_ENTRIES = "CREATE TABLE " +
-            TABLE_NAME + "(" + IncidenciaContract.IncidenciaEntry.ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_NAME_TITLE+ " TEXT UNIQUE, "+ COLUMN_NAME_TITLE_SPINNER  + "TEXT UNIQUE );";
+            TABLE_NAME + "(" + IncidenciaEntry.ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_NAME_TITLE + " TEXT UNIQUE, "+ COLUMN_NAME_TITLE_SPINNER  + " TEXT UNIQUE );";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity{
         //listaIn = new ArrayList<String>();
         //listaSpinner = new ArrayList<String>();
 
-        list = new ArrayList<Incidencia>();
+        list = new ArrayList<Listar>();
 
         /*
         Bundle bundle = new Bundle();

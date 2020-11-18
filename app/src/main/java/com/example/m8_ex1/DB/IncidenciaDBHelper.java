@@ -17,7 +17,7 @@ public class IncidenciaDBHelper extends SQLiteOpenHelper {
     public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "incidencies.db";
     private static final String SQL_CREATE_ENTRIES = "CREATE TABLE " +
-            TABLE_NAME + "(" + IncidenciaEntry.ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_NAME_TITLE + " TEXT UNIQUE, "+ COLUMN_NAME_TITLE_SPINNER  + "TEXT UNIQUE );";
+            TABLE_NAME + "(" + IncidenciaEntry.ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_NAME_TITLE + " TEXT UNIQUE, "+ COLUMN_NAME_TITLE_SPINNER  + " TEXT UNIQUE );";
 
 
     public IncidenciaDBHelper(Context context ) {

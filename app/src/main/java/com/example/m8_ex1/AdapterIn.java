@@ -11,8 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class AdapterIn extends RecyclerView.Adapter<AdapterIn.ViewHolderIn> {
-    ArrayList<Incidencia> list;
-    public AdapterIn(ArrayList<Incidencia> list) {
+    ArrayList<Listar> list;
+    public AdapterIn(ArrayList<Listar> list) {
         this.list = list;
     }
 
@@ -26,8 +26,8 @@ public class AdapterIn extends RecyclerView.Adapter<AdapterIn.ViewHolderIn> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolderIn holder, int position) {
-        holder.Id.setText(list.get(position).getNameIn());
-        holder.NameIn.setText(list.get(position).getSpinner());
+        holder.Id.setText(list.get(position).getId());
+        holder.NameIn.setText(list.get(position).getNameIn());
         holder.Spinner.setText(list.get(position).getSpinner());
     }
 
