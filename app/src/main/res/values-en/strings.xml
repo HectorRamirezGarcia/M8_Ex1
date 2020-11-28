@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">M8_Ex1</string>
+
+    <!-- Array Categorias de Incidencias -->
+    <string-array name="numbers">
+        <item>Low</item>
+        <item>Medium</item>
+        <item>High</item>
+    </string-array>
+
+    <!-- Layout items menu -->
+
+    <string name="inicio">Home</string>
+    <string name="configuracion">Configure</string>
+
+    <!-- Menu Login -->
+
+    <string name="nombre_u">User Name</string>
+    <string name="contraseña">Password</string>
+    <string name="button_Entrar">Log in</string>
+
+    <!-- Botones Menu -->
+
+    <string name="añadir">Add</string>
+    <string name="eliminar">Delete</string>
+    <string name="llistar">List</string>
+
+
+    <!-- Layout Añadir -->
+
+    <string name="hint_NameIn">Name of the Incident</string>
+    <string name="button_Afegir">Add</string>
+    <string name="Text_Categoria">Category</string>
+
+
+</resources>

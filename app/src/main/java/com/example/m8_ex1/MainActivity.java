@@ -2,6 +2,7 @@ package com.example.m8_ex1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.pm.ActivityInfo;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
@@ -26,12 +27,14 @@ public class MainActivity extends AppCompatActivity{
     protected SQLiteDatabase db;
 
     protected static final String SQL_CREATE_ENTRIES = "CREATE TABLE " +
-            TABLE_NAME + "(" + IncidenciaEntry.ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_NAME_TITLE + " TEXT UNIQUE, "+ COLUMN_NAME_TITLE_SPINNER  + " TEXT UNIQUE );";
+            TABLE_NAME + "(" + IncidenciaEntry.ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_NAME_TITLE + " TEXT, "+ COLUMN_NAME_TITLE_SPINNER  + " TEXT );";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
 
         dbHelper = new IncidenciaDBHelper(getApplicationContext());
         db = dbHelper.getWritableDatabase();

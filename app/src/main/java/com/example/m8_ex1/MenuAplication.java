@@ -24,7 +24,6 @@ public class MenuAplication extends Fragment {
     public MenuAplication() {
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -58,6 +57,11 @@ public class MenuAplication extends Fragment {
             public void onClick(View v) {
                 ((MainActivity)getActivity()).db.execSQL("DROP TABLE IF EXISTS "+ TABLE_NAME+";");
                 ((MainActivity)getActivity()).db.execSQL(((MainActivity)getActivity()).SQL_CREATE_ENTRIES);
+                FragmentManager menuManager = getFragmentManager();
+                FragmentTransaction menuTransaction = menuManager.beginTransaction();
+                Fragment fragmentViewIn = new ViewIn();
+                menuTransaction.replace(R.id.fragmentID, fragmentViewIn );
+                menuTransaction.commit();
             }
         });
 

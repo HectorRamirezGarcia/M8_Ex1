@@ -15,27 +15,30 @@
             android:id="@+id/btnAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:layout_weight="1"
             android:background="@drawable/button_rounded"
-            android:text="Afegir"
+            android:text="@string/button_Afegir"
             android:textColor="@android:color/background_light" />
 
         <Button
             android:id="@+id/idButtonRemove"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:layout_weight="1"
             android:background="@drawable/button_rounded"
-            android:text="Eliminar"
+            android:text="@string/eliminar"
             android:textColor="@android:color/background_light" />
 
         <Button
             android:id="@+id/idButtonList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:layout_weight="1"
             android:background="@drawable/button_rounded"
-            android:text="Llistar"
+            android:text="@string/llistar"
             android:textColor="@android:color/background_light" />
 
     </LinearLayout>

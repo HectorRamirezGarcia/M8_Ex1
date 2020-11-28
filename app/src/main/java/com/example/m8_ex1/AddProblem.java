@@ -51,7 +51,6 @@ public class AddProblem extends Fragment {
                 String txtCategoriaForm = spinner.getSelectedItem().toString();
                 Incidencia in = new Incidencia(txtIncidenciaForm, txtCategoriaForm);
                 dbHelper.insertIncidencia(db, in);
-
             }
         });
 
