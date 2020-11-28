@@ -16,7 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class Login extends AppCompatActivity {
-    String campoUsername, campoPassword, strpruebauser, strpruebapass;
+    String campoUsername, campoPassword;
     EditText txtUsername, txtPassword;
     int comprobante = 0;
 
