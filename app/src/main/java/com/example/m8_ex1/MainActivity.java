@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity{
     //protected ArrayList<String> listaSpinner;
     protected ArrayList<Listar> list;
     protected ArrayList<Incidencia> listcomprobante;
-    protected int comprobante = 0;
+    protected int comprobanteIdioma = 0, contadorp = 0;
     protected IncidenciaDBHelper dbHelper;
     protected SQLiteDatabase db;
 
@@ -44,14 +44,11 @@ public class MainActivity extends AppCompatActivity{
 
         list = new ArrayList<Listar>();
 
-        /*
-        Bundle bundle = new Bundle();
 
-        bundle.putSerializable("listaIn", listaIn);
-        bundle.putSerializable("listaSpinner", listaSpinner);
-        bundle.putSerializable("list", list);
-        bundle.putSerializable("comprobante", comprobante);
-        */
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("comprobanteIdioma", comprobanteIdioma);
+        bundle.putSerializable("contadorp", contadorp);
+
 
     }
 

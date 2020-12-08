@@ -1,7 +1,9 @@
 package com.example.m8_ex1;
 
+import android.app.AlertDialog;
 import android.app.FragmentTransaction;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -9,6 +11,7 @@ import android.os.Bundle;
 
 import android.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,21 +38,40 @@ public class FragmentPrueba extends Fragment {
         final Button buttonEs = menu.findViewById(R.id.buttonEs);
         buttonEs.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                prefs = getContext().getSharedPreferences("Mispreferencias", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putInt("comprobanteIdioma", 1);
+                editor.commit();
+                ((MainActivity)getActivity()).comprobanteIdioma = (prefs.getInt("comprobanteIdiomas", 1));
+                ((MainActivity)getActivity()).contadorp++;
+                Log.i("LL", String.valueOf(((MainActivity)getActivity()).comprobanteIdioma));
                 Save("Es");
+                Intent intent = new Intent(getActivity(), Login.class);
+                intent.putExtra("comprobanteIdioma", ((MainActivity)getActivity()).comprobanteIdioma);
+                intent.putExtra("contadorp", ((MainActivity)getActivity()).contadorp);
+                startActivity(intent);
             }
         });
 
         final Button buttonEn = menu.findViewById(R.id.buttonEn);
         buttonEn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                prefs = getContext().getSharedPreferences("Mispreferencias", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putInt("comprobanteIdioma", 2);
+                editor.commit();
+                ((MainActivity)getActivity()).comprobanteIdioma = (prefs.getInt("comprobanteIdiomas", 2));
                 Save("En");
+                Intent intent = new Intent(getActivity(), Login.class);
+                intent.putExtra("comprobanteIdioma", ((MainActivity)getActivity()).comprobanteIdioma);
+                startActivity(intent);
             }
         });
 
         final Button buttonRes = menu.findViewById(R.id.buttonReset);
         buttonRes.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                reset();
+                mostrarAlertDialog();
             }
         });
         // Inflate the layout for this fragment
@@ -82,6 +104,36 @@ public class FragmentPrueba extends Fragment {
         SharedPreferences.Editor editor = prefs.edit();
         editor.clear();
         editor.commit();
-        System.exit(0);
+        prefs = getContext().getSharedPreferences("Mispreferencias", Context.MODE_PRIVATE);
+        editor = prefs.edit();
+        editor.putInt("comprobanteIdioma", 2);
+        editor.commit();
+        Save("En");
+        ((MainActivity)getActivity()).comprobanteIdioma = (prefs.getInt("comprobanteIdiomas", 2));
+        Intent intent = new Intent(getActivity(), Login.class);
+        intent.putExtra("comprobanteIdioma", ((MainActivity)getActivity()).comprobanteIdioma);
+        startActivity(intent);
+    }
+
+    private void mostrarAlertDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setTitle(getResources().getString(R.string.textTitleRes));
+        builder.setMessage(getResources().getString(R.string.textMessageRes));
+        builder.setPositiveButton(getResources().getString(R.string.buttonAlertYes),
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        reset();
+                    }
+                });
+        builder.setNegativeButton(getResources().getString(R.string.buttonAlertNo),
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        builder.show();
     }
 }

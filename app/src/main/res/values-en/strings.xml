@@ -34,5 +34,23 @@
     <string name="button_Afegir">Add</string>
     <string name="Text_Categoria">Category</string>
 
+    <!-- Menu configuracion -->
+    <string name="textRest">Reset app settings</string>
+    <string name="textIdiomEs">Change Spanish language</string>
+    <string name="textIdiomEn">Change English language</string>
+    <string name="buttonRest">Reset</string>
+    <string name="buttonIdiomEs">Spanish</string>
+    <string name="buttonIdiomEn">English</string>
+
+    <!-- Alerts Dialog -->
+    <string name="textTitleRes">Reset settings</string>
+    <string name="textMessageRes">Are you sure you want to reset all the settings?</string>
+
+    <string name="textTitleDeleteList">Remove all content from your list</string>
+    <string name="textMessageDeleteList">Are you sure you want to delete all the content of your table?</string>
+
+    <string name="buttonAlertYes">Yes</string>
+    <string name="buttonAlertNo">No</string>
+
 
 </resources>

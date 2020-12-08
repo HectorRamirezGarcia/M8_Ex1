@@ -1,8 +1,10 @@
 package com.example.m8_ex1;
 
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -55,16 +57,38 @@ public class MenuAplication extends Fragment {
         final Button btnEliminar = menu.findViewById(R.id.idButtonRemove);
         btnEliminar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                ((MainActivity)getActivity()).db.execSQL("DROP TABLE IF EXISTS "+ TABLE_NAME+";");
-                ((MainActivity)getActivity()).db.execSQL(((MainActivity)getActivity()).SQL_CREATE_ENTRIES);
-                FragmentManager menuManager = getFragmentManager();
-                FragmentTransaction menuTransaction = menuManager.beginTransaction();
-                Fragment fragmentViewIn = new ViewIn();
-                menuTransaction.replace(R.id.fragmentID, fragmentViewIn );
-                menuTransaction.commit();
+                mostrarAlertDialog();
             }
         });
 
         return menu;
+    }
+
+    private void mostrarAlertDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setTitle(getResources().getString(R.string.textTitleDeleteList));
+        builder.setMessage(getResources().getString(R.string.textMessageDeleteList));
+        builder.setPositiveButton(getResources().getString(R.string.buttonAlertYes),
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        ((MainActivity)getActivity()).db.execSQL("DROP TABLE IF EXISTS "+ TABLE_NAME+";");
+                        ((MainActivity)getActivity()).db.execSQL(((MainActivity)getActivity()).SQL_CREATE_ENTRIES);
+                        FragmentManager menuManager = getFragmentManager();
+                        FragmentTransaction menuTransaction = menuManager.beginTransaction();
+                        Fragment fragmentViewIn = new ViewIn();
+                        menuTransaction.replace(R.id.fragmentID, fragmentViewIn );
+                        menuTransaction.commit();
+                    }
+                });
+        builder.setNegativeButton(getResources().getString(R.string.buttonAlertNo),
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        builder.show();
     }
 }

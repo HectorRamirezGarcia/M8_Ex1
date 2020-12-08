@@ -22,7 +22,7 @@
 
     <string name="añadir">Añadir</string>
     <string name="eliminar">Eliminar</string>
-    <string name="llistar">Llistar</string>
+    <string name="llistar">Listar</string>
 
 
     <!-- Layout Añadir -->
@@ -30,6 +30,24 @@
     <string name="hint_NameIn">Nombre de la Incidència</string>
     <string name="button_Afegir">Añadir</string>
     <string name="Text_Categoria">Categoria</string>
+
+    <!-- Menu configuracion -->
+    <string name="textRest">Reiniciar configuraciones de la app</string>
+    <string name="textIdiomEs">Cambiar idioma Español</string>
+    <string name="textIdiomEn">Cambiar idioma Ingles</string>
+    <string name="buttonRest">Reiniciar</string>
+    <string name="buttonIdiomEs">Español</string>
+    <string name="buttonIdiomEn">Ingles</string>
+
+    <!-- Alerts Dialog -->
+    <string name="textTitleRes">Reinicio de configuraciones</string>
+    <string name="textMessageRes">Estas seguro que quieres reiniciar todas las configuraciones ya echas?</string>
+
+    <string name="textTitleDeleteList">Eliminar todo el contenido de tu lista</string>
+    <string name="textMessageDeleteList">Estas seguro que quieres borrar todo el contenido de tu tabla?</string>
+
+    <string name="buttonAlertYes">Si</string>
+    <string name="buttonAlertNo">No</string>
 
 
     <string name="title_activity_nav__conf">Nav_Conf</string>
