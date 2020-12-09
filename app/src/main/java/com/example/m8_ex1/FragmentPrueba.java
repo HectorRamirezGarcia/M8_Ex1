@@ -106,10 +106,10 @@ public class FragmentPrueba extends Fragment {
         editor.commit();
         prefs = getContext().getSharedPreferences("Mispreferencias", Context.MODE_PRIVATE);
         editor = prefs.edit();
-        editor.putInt("comprobanteIdioma", 2);
+        editor.putInt("comprobanteIdioma", 0);
         editor.commit();
-        Save("En");
-        ((MainActivity)getActivity()).comprobanteIdioma = (prefs.getInt("comprobanteIdiomas", 2));
+        System.exit(2);
+        ((MainActivity)getActivity()).comprobanteIdioma = (prefs.getInt("comprobanteIdiomas", 0));
         Intent intent = new Intent(getActivity(), Login.class);
         intent.putExtra("comprobanteIdioma", ((MainActivity)getActivity()).comprobanteIdioma);
         startActivity(intent);

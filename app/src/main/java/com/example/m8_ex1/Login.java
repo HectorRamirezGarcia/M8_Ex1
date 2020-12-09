@@ -57,8 +57,11 @@ public class Login extends AppCompatActivity {
                 if (comprobanteIdioma == 1){
                     Save("Es");
                 }
-                else {
+                if (comprobanteIdioma == 2) {
                     Save("En");
+                }
+                else {
+                    refresh();
                 }
             }
         }
